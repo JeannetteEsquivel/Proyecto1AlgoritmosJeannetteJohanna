@@ -27,6 +27,18 @@ public class Pelicula {
         this.premier = premier;
     }
 
+    public Pelicula(String titulo, String genero) {
+        this.titulo = titulo;
+        this.genero = genero;
+    }
+
+    public Pelicula(int codigo, String titulo, String genero) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.genero = genero;
+    }
+    
+
     public Pelicula() {
         this.codigo = 0;
         this.titulo = "";
