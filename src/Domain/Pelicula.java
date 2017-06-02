@@ -11,14 +11,14 @@ package Domain;
  */
 public class Pelicula {
     
-    private int codigo;
+    private String codigo;
     private String titulo;
     private String genero;
     private int total;
     private int subtitulo;
     private int premier;
 
-    public Pelicula(int codigo, String titulo, String genero, int total, int subtitulo, int premier) {
+    public Pelicula(String codigo, String titulo, String genero, int total, int subtitulo, int premier) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.genero = genero;
@@ -27,8 +27,20 @@ public class Pelicula {
         this.premier = premier;
     }
 
+    public Pelicula(String titulo, String genero) {
+        this.titulo = titulo;
+        this.genero = genero;
+    }
+
+    public Pelicula(String codigo, String titulo, String genero) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.genero = genero;
+    }
+    
+
     public Pelicula() {
-        this.codigo = 0;
+        this.codigo = "";
         this.titulo = "";
         this.genero = "";
         this.total = 0;
@@ -43,11 +55,11 @@ public class Pelicula {
     
     
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

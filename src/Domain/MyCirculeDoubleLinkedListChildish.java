@@ -9,14 +9,13 @@ package Domain;
  *
  * @author jeannette
  */
-public class MyCirculeDoubleLinkedList {
-    
+public class MyCirculeDoubleLinkedListChildish {
     private MyNodeCountry head;
     private MyNodeCountry tail;
     private MyNodeCountry node;
     private int size;
 
-    public MyCirculeDoubleLinkedList() {
+    public MyCirculeDoubleLinkedListChildish() {
         this.head = null;
         this.tail = null;
         this.size = 0;
@@ -74,39 +73,6 @@ public class MyCirculeDoubleLinkedList {
         this.setSize(this.getSize() + 1);
     }//fin method
 
-    public void deleteFromList(String countryName) {
-        MyNodeCountry temp = this.getHead();
-        if (this.getSize() > 0) {
-            while (!temp.getPelicula().getTitulo().equals(countryName)) {
-                temp = temp.getNext();
-            }//fin while
-            //preguntar porque se detuvo
-            if (this.getSize() == 1 && temp == this.getHead() && temp == this.getTail()) {
-                this.setHead(null);
-                this.setTail(null);
-                this.setSize(this.getSize() - 1);
-            } else {
-                if (temp == this.getHead()) {
-                    this.setHead(this.getHead().getNext());
-                    this.getTail().setNext(this.getHead());
-                    this.getHead().setPrev(this.getTail());
-                    this.setSize(this.getSize() - 1);
-                } else {
-                    if (temp == this.getTail()) {
-                        this.setTail(this.getTail().getPrev());
-                        this.getHead().setPrev(this.getTail());
-                        this.getTail().setNext(this.getHead());
-                        this.setSize(this.getSize() - 1);
-                    } else {
-                        temp.getPrev().setNext(temp.getNext());
-                        temp.getNext().setPrev(temp.getPrev());
-                        this.setSize(this.getSize() - 1);
-                    }//if para saber si es tail o no
-                }//if para saber si es head o no
-            }//if para saber si hay 1 o mas valores
-        }//if para saber si la lista tiene algun valor
-    }//end method
-
     public void printList() {
         MyNodeCountry temp = this.getHead();
         System.out.println("List size: " + this.getSize());
@@ -154,5 +120,4 @@ public class MyCirculeDoubleLinkedList {
     public void setNode(MyNodeCountry node) {
         this.node = node;
     }
-
-}//end class
+}
