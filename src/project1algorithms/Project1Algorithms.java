@@ -10,7 +10,6 @@ import Domain.Pelicula;
 import java.awt.Window;
 import java.io.IOException;
 
-
 /**
  *
  * @author jeannette

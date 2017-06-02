@@ -32,7 +32,11 @@ public class Pelicula {
         this.genero = genero;
     }
 
+<<<<<<< HEAD
     public Pelicula(String codigo, String titulo, String genero) {
+=======
+    public Pelicula(int codigo, String titulo, String genero) {
+>>>>>>> 78b944b0a7fb18e17acfd96e816c7d6acb0d12a1
         this.codigo = codigo;
         this.titulo = titulo;
         this.genero = genero;

@@ -5,6 +5,7 @@
  */
 package Data;
 
+<<<<<<< HEAD
 import Domain.MyCirculeDoubleLinkedListAction;
 import Domain.MyCirculeDoubleLinkedListChildish;
 import Domain.MyCirculeDoubleLinkedListComedy;
@@ -19,6 +20,16 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+=======
+import Domain.Pelicula;
+import com.csvreader.CsvReader;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+>>>>>>> 78b944b0a7fb18e17acfd96e816c7d6acb0d12a1
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -28,6 +39,7 @@ import javax.swing.JOptionPane;
  */
 public class ArchivoData {
 
+<<<<<<< HEAD
     File file = new File("datos.csv");
 
     public void insertarPelicula(Pelicula pelicula) throws FileNotFoundException, IOException {
@@ -140,5 +152,43 @@ public class ArchivoData {
         
         return listPelicula;
     }
+=======
+    public static final String SEPARATOR = ",";
+    public static final String QUOTE = "\"";
+
+    public List<Pelicula> recuperarDelArchivo() throws IOException {
+        List<Pelicula> list = new ArrayList<Pelicula>();
+        BufferedReader br = null;
+        int cont=0;
+
+        try {
+
+            br = new BufferedReader(new FileReader("datos.csv"));
+            String line = br.readLine();
+            while (null != line) {
+                String[] fields = line.split(SEPARATOR);
+                if (cont != 0) {
+                    Pelicula pelicula = new Pelicula(Integer.parseInt(fields[0]), fields[1], fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4]), Integer.parseInt(fields[5]));
+                    list.add(pelicula);
+                    //JOptionPane.showMessageDialog(null, pelicula.toString());
+                }
+                System.out.println(Arrays.toString(fields));
+                line = br.readLine();
+                cont++;
+            }
+        } catch (Exception e) {
+
+        } finally {
+            if (null != br) {
+                br.close();
+            }
+        }
+//        for (int i = 0; i < list.size(); i++) {
+//            JOptionPane.showMessageDialog(null, list.get(i));
+//            
+//        }//for i
+        return list;
+    }//met
+>>>>>>> 78b944b0a7fb18e17acfd96e816c7d6acb0d12a1
 
 }//class
